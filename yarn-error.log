@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /mnt/c/Program Files (x86)/Yarn/bin/yarn.js add date-fns
+  /usr/bin/node /mnt/c/Program Files (x86)/Yarn/bin/yarn.js add reflect-mtadata
 
 PATH: 
   /home/fabio/.zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files (x86)/Yarn/bin/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/Fabio santos/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Fabio santos/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Fabio santos/AppData/Roaming/npm:/mnt/c/Users/Fabio santos/AppData/Local/Yarn/bin:/mnt/c/Program Files/heroku/bin
@@ -14,12 +14,17 @@ Platform:
   linux x64
 
 Trace: 
-  SyntaxError: /mnt/c/Users/Fabio santos/OneDrive/Área de Trabalho/projetos/omnistack/back/package.json: Unexpected token } in JSON at position 212
-      at JSON.parse (<anonymous>)
-      at /mnt/c/Program Files (x86)/Yarn/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/mnt/c/Program Files (x86)/Yarn/lib/cli.js:310:30)
-      at /mnt/c/Program Files (x86)/Yarn/lib/cli.js:321:13
+  Error: https://registry.yarnpkg.com/reflect-mtadata: Not found
+      at Request.params.callback [as _callback] (/mnt/c/Program Files (x86)/Yarn/lib/cli.js:66097:18)
+      at Request.self.callback (/mnt/c/Program Files (x86)/Yarn/lib/cli.js:140749:22)
+      at Request.emit (events.js:375:28)
+      at Request.<anonymous> (/mnt/c/Program Files (x86)/Yarn/lib/cli.js:141721:10)
+      at Request.emit (events.js:375:28)
+      at IncomingMessage.<anonymous> (/mnt/c/Program Files (x86)/Yarn/lib/cli.js:141643:12)
+      at Object.onceWrapper (events.js:481:28)
+      at IncomingMessage.emit (events.js:387:35)
+      at endReadableNT (internal/streams/readable.js:1317:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
 
 npm manifest: 
   {
@@ -30,6 +35,8 @@ npm manifest:
   	"scripts": {
   		"buid": "tsc",
   		"dev:server": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
+  		"start": "ts-node src/index.ts",
+  		"typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
   	},
   	"dependencies": {
   		"express": "^4.17.1",
