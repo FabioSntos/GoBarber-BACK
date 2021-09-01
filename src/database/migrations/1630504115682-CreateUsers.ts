@@ -24,6 +24,10 @@ export default class CreateUsers1630503467688 implements MigrationInterface {
             isUnique: true,
           },
           {
+            name: "password",
+            type: "varchar",
+          },
+          {
             name: "created_at",
             type: "timestamp",
             default: "now()",
@@ -42,3 +46,4 @@ export default class CreateUsers1630503467688 implements MigrationInterface {
     await queryRunner.dropTable("users");
   }
 }
+
